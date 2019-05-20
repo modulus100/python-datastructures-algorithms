@@ -45,10 +45,20 @@ class LinkedList:
 
     def remove(self, value):
         """ Remove first occurrence of value. """
+        if self.head is None:
+            return
 
-        # TODO: Write function to remove here
+        if self.head.value == value:
+            self.head = self.head.next
+            return
 
-        pass
+        previous_node = self.head.value
+        current_node = self.head.next
+        while current_node:
+            if current_node.value == value:
+                pass
+
+
 
     def pop(self):
         """ Return the first node's value and remove it from the list. """
@@ -106,14 +116,17 @@ linked_list.append(3)
 assert linked_list.search(1).value == 1, f"list contents: {linked_list.to_list()}"
 assert linked_list.search(4).value == 4, f"list contents: {linked_list.to_list()}"
 
-# # Test remove
-# linked_list.remove(1)
-# assert linked_list.to_list() == [2, 1, 3, 4, 3], f"list contents: {linked_list.to_list()}"
-# linked_list.remove(3)
-# assert linked_list.to_list() == [2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
-# linked_list.remove(3)
-# assert linked_list.to_list() == [2, 1, 4], f"list contents: {linked_list.to_list()}"
-#
+# Test remove
+linked_list.remove(1)
+print(linked_list.to_list())
+assert linked_list.to_list() == [2, 1, 3, 4, 3], f"list contents: {linked_list.to_list()}"
+linked_list.remove(3)
+print(linked_list.to_list())
+assert linked_list.to_list() == [2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
+linked_list.remove(3)
+print(linked_list.to_list())
+assert linked_list.to_list() == [2, 1, 4], f"list contents: {linked_list.to_list()}"
+
 # # Test pop
 # value = linked_list.pop()
 # assert value == 2, f"list contents: {linked_list.to_list()}"
