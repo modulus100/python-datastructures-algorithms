@@ -98,10 +98,13 @@ class LinkedList:
 
     def size(self):
         """ Return the size or length of the linked list. """
+        size = 0
+        node = self.head
+        while node:
+            size += 1
+            node = node.next
 
-        # TODO: Write function to get size here
-
-        pass
+        return size
 
     def to_list(self):
         out = []
