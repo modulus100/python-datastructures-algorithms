@@ -15,9 +15,9 @@ class LinkedList:
             self.head = Node(value)
             return
 
-        temp_node = self.head
+        node = self.head
         self.head = Node(value)
-        self.head.next = temp_node
+        self.head.next = node
 
     def append(self, value):
         """ Append a value to the end of the list. """
@@ -61,10 +61,12 @@ class LinkedList:
 
     def pop(self):
         """ Return the first node's value and remove it from the list. """
+        if self.head is None:
+            return None
 
-        # TODO: Write function to pop here
-
-        pass
+        node = self.head
+        self.head = self.head.next
+        return node.value
 
     def insert(self, value, pos):
         """ Insert value at pos position in the list. If pos is larger than the
@@ -122,12 +124,12 @@ linked_list.remove(3)
 assert linked_list.to_list() == [2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
 linked_list.remove(3)
 assert linked_list.to_list() == [2, 1, 4], f"list contents: {linked_list.to_list()}"
-#
-# # Test pop
-# value = linked_list.pop()
-# assert value == 2, f"list contents: {linked_list.to_list()}"
-# assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
-#
+
+# Test pop
+value = linked_list.pop()
+assert value == 2, f"list contents: {linked_list.to_list()}"
+assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
+
 # # Test insert
 # linked_list.insert(5, 0)
 # assert linked_list.to_list() == [5, 1, 4], f"list contents: {linked_list.to_list()}"
