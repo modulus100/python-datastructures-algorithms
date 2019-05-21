@@ -71,10 +71,30 @@ class LinkedList:
     def insert(self, value, pos):
         """ Insert value at pos position in the list. If pos is larger than the
             length of the list, append to the end of the list. """
+        index = 1
 
-        # TODO: Write function to insert here
+        if pos < 0:
+            return
 
-        pass
+        if self.head is None:
+            self.head = Node(value)
+            return
+
+        if pos == 0:
+            self.prepend(value)
+            return
+
+        node = self.head
+        while node.next:
+            if index == pos:
+                new_node = Node(value)
+                new_node.next = node.next
+                node.next = new_node
+                return
+            node = node.next
+            index = index + 1
+
+        node.next = Node(value)
 
     def size(self):
         """ Return the size or length of the linked list. """
@@ -130,13 +150,13 @@ value = linked_list.pop()
 assert value == 2, f"list contents: {linked_list.to_list()}"
 assert linked_list.head.value == 1, f"list contents: {linked_list.to_list()}"
 
-# # Test insert
-# linked_list.insert(5, 0)
-# assert linked_list.to_list() == [5, 1, 4], f"list contents: {linked_list.to_list()}"
-# linked_list.insert(2, 1)
-# assert linked_list.to_list() == [5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
-# linked_list.insert(3, 6)
-# assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
-#
+# Test insert
+linked_list.insert(5, 0)
+assert linked_list.to_list() == [5, 1, 4], f"list contents: {linked_list.to_list()}"
+linked_list.insert(2, 1)
+assert linked_list.to_list() == [5, 2, 1, 4], f"list contents: {linked_list.to_list()}"
+linked_list.insert(3, 6)
+assert linked_list.to_list() == [5, 2, 1, 4, 3], f"list contents: {linked_list.to_list()}"
+
 # # Test size
 # assert linked_list.size() == 5, f"list contents: {linked_list.to_list()}"
