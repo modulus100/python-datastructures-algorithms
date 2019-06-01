@@ -1,6 +1,7 @@
 from binary_tree import Tree
 from binary_tree import Node
 
+
 class Stack():
     def __init__(self):
         self.list = list()
