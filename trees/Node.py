@@ -33,14 +33,3 @@ class Node(object):
 
     def __str__(self):
         return f"Node({self.get_value()})"
-
-
-class Tree(object):
-    def __init__(self, value):
-        if isinstance(value, Node):
-            self.root = value
-        else:
-            self.root = Node(value)
-
-    def get_root(self):
-        return self.root

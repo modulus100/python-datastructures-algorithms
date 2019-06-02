@@ -1,5 +1,5 @@
-from trees.binary_tree import Tree
-from trees.binary_tree import Node
+from trees.Tree import Tree
+from trees.Node import Node
 
 
 class Stack():
