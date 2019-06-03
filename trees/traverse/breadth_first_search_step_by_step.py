@@ -2,8 +2,6 @@ from trees.Node import Node
 from trees.Tree import Tree
 from trees.Queue import Queue
 
-from collections import deque
-
 
 tree = Tree("apple")
 tree.get_root().set_left_child(Node("banana"))
