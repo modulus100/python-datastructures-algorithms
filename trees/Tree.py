@@ -34,7 +34,19 @@ class Tree():
     """
 
     def insert_with_loop(self, new_value):
-        pass
+        if self.root == None:
+            self.root = Node(new_value)
+            return
+
+        q = Queue()
+        q.enq(self.get_root())
+
+        while (True):
+            node = q.deq()
+            new_node = Node(new_value)
+
+            if self.compare(node, new_node) == 0:
+                node.set_value(new_node.get_value())
 
     """
     define insert here (can use recursion)
