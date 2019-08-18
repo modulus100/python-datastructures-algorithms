@@ -3,11 +3,8 @@ from trees.Queue import Queue
 
 
 class Tree():
-    def __init__(self, value):
-        if isinstance(value, Node):
-            self.root = value
-        else:
-            self.root = Node(value)
+    def __init__(self):
+        self.root = None
 
     def set_root(self, value):
         self.root = Node(value)
@@ -47,6 +44,19 @@ class Tree():
 
             if self.compare(node, new_node) == 0:
                 node.set_value(new_node.get_value())
+                break
+            elif self.compare(node, new_node) == -1:
+                if node.has_left_child():
+                    q.enq(node.get_left_child())
+                else:
+                    node.set_left_child(new_node)
+                    break
+            else:
+                if node.has_right_child():
+                    q.enq(node.get_right_child())
+                else:
+                    node.set_right_child(new_node)
+                    break
 
     """
     define insert here (can use recursion)
@@ -62,7 +72,6 @@ class Tree():
         visit_order = list()
         node = self.get_root()
         q.enq((node, level))
-
         while (len(q) > 0):
             node, level = q.deq()
             if node == None:
