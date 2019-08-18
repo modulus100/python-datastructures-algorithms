@@ -45,17 +45,17 @@ class Tree():
             if self.compare(node, new_node) == 0:
                 node.set_value(new_node.get_value())
                 break
-            elif self.compare(node, new_node) == -1:
-                if node.has_left_child():
-                    q.enq(node.get_left_child())
-                else:
-                    node.set_left_child(new_node)
-                    break
-            else:
+            elif self.compare(node, new_node) == 1:
                 if node.has_right_child():
                     q.enq(node.get_right_child())
                 else:
                     node.set_right_child(new_node)
+                    break
+            else:
+                if node.has_left_child():
+                    q.enq(node.get_left_child())
+                else:
+                    node.set_left_child(new_node)
                     break
 
     """
@@ -64,7 +64,25 @@ class Tree():
     """
 
     def insert_with_recursion(self, value):
-        pass
+        if self.root == None:
+            self.root = Node(value)
+            return
+
+        self._insert_with_recursion(self.get_root(), Node(value))
+
+    def _insert_with_recursion(self, node, new_node):
+        if self.compare(node, new_node) == 0:
+            node.set_value(new_node.get_value())
+        elif self.compare(node, new_node) == 1:
+            if node.has_right_child():
+                self._insert_with_recursion(node.get_right_child(), new_node)
+            else:
+                node.set_right_child(new_node)
+        else:
+            if node.has_left_child():
+                self._insert_with_recursion(node.get_left_child(), new_node)
+            else:
+                node.set_left_child(new_node)
 
     def __repr__(self):
         level = 0
