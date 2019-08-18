@@ -30,7 +30,7 @@ class Tree():
     can use a for loop (try one or both ways)
     """
 
-    def insert_with_loop(self, new_value):
+    def insert(self, new_value):
         if self.root == None:
             self.root = Node(new_value)
             return
@@ -83,6 +83,30 @@ class Tree():
                 self._insert_with_recursion(node.get_left_child(), new_node)
             else:
                 node.set_left_child(new_node)
+
+    """
+        implement search
+        """
+
+    def search(self, value):
+        if self.root == None:
+            return None
+
+        node = self.get_root()
+        search_node = Node(value)
+
+        while (True):
+            if self.compare(node, search_node) == 0:
+                return node
+            elif self.compare(node, search_node) == 1:
+                if node.has_right_child():
+                    node = node.get_right_child()
+                else:
+                    return None
+            elif node.get_left_child():
+                node = node.get_left_child()
+            else:
+                return None
 
     def __repr__(self):
         level = 0
