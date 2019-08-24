@@ -28,6 +28,15 @@ class Node(object):
     def has_right_child(self):
         return self.right is not None
 
+    def has_no_children(self):
+        return self.has_left_child() is False and self.has_right_child() is False
+
+    def has_only_left_child(self):
+        return self.has_left_child() and self.has_right_child() is False
+
+    def has_only_right_child(self):
+        return self.has_left_child() is False and self.has_right_child()
+
     def __repr__(self):
         return f"Node({self.get_value()})"
 

@@ -108,6 +108,30 @@ class Tree():
             else:
                 return None
 
+    def delete(self, value):
+        if self.root == None:
+            return None
+
+        node = self.get_root()
+        delete_node = Node(value)
+        previous_node = None
+        previous_node_left = False
+
+        while(True):
+            if self.compare(node, delete_node) == 0:
+                if node.has_no_children() and previous_node is None:
+                    self.root = None
+                    break
+                if node.has_no_children():
+                    if previous_node_left:
+                        previous_node.set_left_child(None)
+                    else:
+                        previous_node.set_right_child(None)
+                    break
+                if node.has_only_left_child():
+                    break
+
+
     def __repr__(self):
         level = 0
         q = Queue()
