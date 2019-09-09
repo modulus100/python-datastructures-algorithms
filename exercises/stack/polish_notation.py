@@ -1,4 +1,4 @@
-from examples.nodes.stack import Stack
+from exercises.stack.nodes.stack import Stack
 
 
 def evaluate_post_fix(input_list):
