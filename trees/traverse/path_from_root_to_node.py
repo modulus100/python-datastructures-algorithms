@@ -36,6 +36,7 @@ def convert_arr_to_binary_tree(arr):
             queue.put(right_node)
     return root
 
+
 def path_from_root_to_node(root, data):
     """
     Assuming data as input to find the node
