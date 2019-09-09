@@ -1,4 +1,4 @@
-from exercises.stack.nodes.linked_list_node import LinkedListNode
+from exercises.stack.nodes.node_linked_list import LinkedListNode
 
 
 class Stack:
