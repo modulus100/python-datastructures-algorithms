@@ -25,3 +25,14 @@ class Queue():
             return s
         else:
             return "<queue is empty>"
+
+
+# q = Queue()
+#
+# q.enq(1)
+# q.enq(5)
+# q.enq(3)
+# q.enq(10)
+#
+# while len(q) != 0:
+#     print(q.deq())

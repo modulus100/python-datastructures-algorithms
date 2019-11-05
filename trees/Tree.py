@@ -3,8 +3,11 @@ from trees.Queue import Queue
 
 
 class Tree():
-    def __init__(self):
-        self.root = None
+    def __init__(self, value):
+        if value is not None:
+            self.set_root(value)
+        else:
+            self.root = None
 
     def set_root(self, value):
         self.root = Node(value)
@@ -109,28 +112,87 @@ class Tree():
                 return None
 
     def delete(self, value):
-        if self.root == None:
+        if self.root is None:
             return None
 
         node = self.get_root()
         delete_node = Node(value)
         previous_node = None
-        previous_node_left = False
+        node_left = False
 
-        while(True):
-            if self.compare(node, delete_node) == 0:
-                if node.has_no_children() and previous_node is None:
-                    self.root = None
-                    break
-                if node.has_no_children():
-                    if previous_node_left:
-                        previous_node.set_left_child(None)
-                    else:
-                        previous_node.set_right_child(None)
-                    break
-                if node.has_only_left_child():
-                    break
+        while self.compare(node, delete_node) != 0:
+            previous_node = node
+            if self.compare(node, delete_node) == -1:
+                node = node.get_left_child()
+                node_left = True
+            else:
+                node = node.get_right_child()
+                node_left = False
+            if node is None:
+                return None
 
+        if node.has_no_children():
+            if self.compare(node, self.root) == 0:
+                delete_node = self.root
+                self.root = None
+            elif node_left:
+                delete_node = previous_node.get_left_child()
+                previous_node.set_left_child(None)
+            else:
+                delete_node = previous_node.get_right_child()
+                previous_node.set_right_child(None)
+
+        elif node.has_only_right_child():
+            if self.compare(node, self.root) == 0:
+                delete_node = self.root
+                self.root = node.get_right_child()
+            elif node_left:
+                delete_node = node
+                previous_node.set_left_child(node.get_right_child())
+            else:
+                delete_node = node
+                previous_node.set_right_child(node.get_right_child())
+
+        elif node.has_only_left_child():
+            if self.compare(node, self.root) == 0:
+                delete_node = self.root
+                self.root = node.get_left_child()
+            elif node_left:
+                delete_node = node
+                previous_node.set_left_child(node.get_left_child())
+            else:
+                delete_node = node
+                previous_node.set_right_child(node.get_left_child())
+        else:
+            successor = self.find_successor(node)
+            if self.compare(node, self.root) == 0:
+                delete_node = self.root
+                self.root = successor
+            elif node_left:
+                delete_node = previous_node.get_left_child()
+                previous_node.set_left_child(successor)
+            else:
+                delete_node = previous_node.get_right_child()
+                previous_node.set_right_child(successor)
+            successor.set_left_child(node.get_left_child())
+
+        return delete_node
+
+    def find_successor(self, node):
+        successor = node
+        previous_node = node
+        current = node.get_right_child()
+
+        while current is not None:
+            previous_node = successor
+            successor = current
+            current = current.get_left_child()
+
+        if successor != node.right:
+            previous_node.set_left_child(successor.get_right_child())
+            successor.set_right_child(node.get_right_child())
+
+        return successor
 
     def __repr__(self):
         level = 0
