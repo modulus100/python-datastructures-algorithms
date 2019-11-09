@@ -8,7 +8,7 @@ tree.get_root().set_right_child(Node("cherry"))
 tree.get_root().get_left_child().set_left_child(Node("dates"))
 
 
-def pre_order(tree):
+def in_order(tree):
     visit_order = list()
 
     def traverse(node):
@@ -21,4 +21,4 @@ def pre_order(tree):
     return visit_order
 
 
-print(pre_order(tree))
+# print(in_order(tree))

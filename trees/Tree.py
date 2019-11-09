@@ -3,7 +3,7 @@ from trees.Queue import Queue
 
 
 class Tree():
-    def __init__(self, value):
+    def __init__(self, value=None):
         if value is not None:
             self.set_root(value)
         else:
