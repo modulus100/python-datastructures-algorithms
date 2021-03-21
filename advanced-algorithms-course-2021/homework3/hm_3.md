@@ -63,3 +63,5 @@ distanceSortedArray(A, B)
   return mid_d
 
 ```
+
+Complexity: **O(n+m)**, where n = A.len, and m = B.len
