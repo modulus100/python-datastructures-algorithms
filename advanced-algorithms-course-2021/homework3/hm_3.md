@@ -27,7 +27,12 @@ O(1) if for simple operations
     10    22   31    45        13    25  38    54
 
 
-`distance_bst(A, B) = 2, closest elements:  27 - 29 = 2`
+`distance_bst(A, B) = 2, closest elements:  27 - 29 = 2`   
+
+I chose the Master theorem for solving the following recursion **T(n) = 3T(n/2) + log(n)** :  
+Based on the Master theorem we got: k = 0, p = 1, a = 3, b = 2  
+log<sub>2</sub><sup>3</sup> = 1.585, log<sub>2</sub><sup>3</sup> > 0,
+then it's a 1st case: **Θ(n^1.585)**
 
 ### Question 4
 
@@ -38,7 +43,7 @@ and computing distance between them would like:
 
 Distance array complexity: **O(n^2)**  
 Despite a complex formula from Q3 it's obvious that this formula
-is more efficient than distanceArray: **Θ(n^2) > Θ(nlog(n))**
+is more efficient than distanceArray: **Θ(n^2) > Θ(nlog(n))** and **Θ(n^2) > Θ(n^1.585)**
 
 ### Question 5
 
@@ -64,4 +69,8 @@ distanceSortedArray(A, B)
 
 ```
 
-Complexity: **O(n+m)**, where n = A.len, and m = B.len
+Complexity: **O(n+m)**, where n = A.len, and m = B.len  
+Since we know that all values are sorted, we can simply iterate through 
+two lists and search for a minimal difference between values.
+In case of 0 there is no sense to proceed the loop if we know that
+the possible minimal value is 0
