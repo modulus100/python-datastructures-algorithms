@@ -21,6 +21,6 @@
 3)  If we replace loops by recursion calls inside the triangle-path-dynamic  
     function then it won't make any performance issues except additional   
     memory consumption. If we make triangle-path recursive then a time  
-    complexity will be higher. **O(n) > O(n^2)**.
+    complexity will be higher. **O(2^n) > O(n^n)**.
     
    
