@@ -11,7 +11,7 @@
 2)  For the top element we don't need to compute a path complexity because  
     the top represents the only a single element. Also, if we pick up a  
     specific start point, then obviously we don't have to compute complexities  
-    for his right and left neighbours. Also we don't have to compute  
+    for his right and left neighbours. However, we don't need to compute  
     complexities for an upper level, because we can go only right or only  
     left. If the point for some reason is located at a corner then we need  
     to compute complexity for only a single point, because you simply can't  
@@ -19,7 +19,14 @@
     
 3)  If we replace loops by recursion calls inside the triangle-path-dynamic  
     function then it won't make any performance issues except additional   
-    memory consumption. If we make triangle-path recursive then a time  
-    complexity will be higher. **O(2^n) > O(n^n)**.
+    memory consumption. If we make triangle-path recursive itself then a time  
+    complexity will be higher. **O(2^n) > O(n^n)**.  
+    Any recursive solution consumes additional memory, because it generates  
+    a same method calls with different parameters, simple loop does not do that.  
+    ![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFractal_canopy&psig=AOvVaw3p5NDJhB22-ZhJqunuLbx-&ust=1617057451583000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCijt-G1O8CFQAAAAAdAAAAABAD, "tree")
+    
+4)  Will be updated soon.
+
+5)  
     
    
