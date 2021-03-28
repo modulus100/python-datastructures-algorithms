@@ -20,10 +20,13 @@
 3)  If we replace loops by recursion calls inside the triangle-path-dynamic  
     function then it won't make any performance issues except additional   
     memory consumption. If we make triangle-path recursive itself then a time  
-    complexity will be higher. **O(2^n) > O(n^n)**.  
+    complexity will be higher. **O(2^n) > O(n^m)**.  
     Any recursive solution consumes additional memory, because it generates  
     a same method calls with different parameters, simple loop does not do that.  
-    ![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FFractal_canopy&psig=AOvVaw3p5NDJhB22-ZhJqunuLbx-&ust=1617057451583000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCijt-G1O8CFQAAAAAdAAAAABAD, "tree")
+    
+    A recursive call would look like a fractal tree but upside down.
+    ![alt text](fractal-tree.png)
+    
     
 4)  Will be updated soon.
 
