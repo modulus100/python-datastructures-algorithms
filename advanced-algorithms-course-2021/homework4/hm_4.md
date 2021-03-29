@@ -41,6 +41,12 @@
     
     **θ(2^n) > θ(n*m)**, recursive method slower than dynamic.
 
-5)  Is being updated
+5)  In general a principal of this problem is the same as for bottom-up, but  
+    algorithm would go from the top. I would start this algorithm from a second  
+    level because the first one is a constant. Also, I would start iteration  
+    from left to right. Additional tables I would use for storing sums.  
+    In my opinion triangle-path-finish is not required here, we simply can find  
+    the max value by comparing with neighbors nodes on the same level. The max  
+    node would be a transitional node.
     
    
