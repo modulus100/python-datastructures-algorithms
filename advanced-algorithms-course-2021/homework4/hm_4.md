@@ -20,7 +20,7 @@
 3)  If we replace loops by recursion calls inside the triangle-path-dynamic  
     function then it won't make any performance issues except additional   
     memory consumption. If we make triangle-path recursive itself then a time  
-    complexity will be higher. **O(2^n) > O(n^m)**.  
+    complexity will be higher. **O(2^n) > O(n*m)**.  
     Any recursive solution consumes additional memory, because it generates  
     a same method calls with different parameters, simple loop does not do that.  
     
@@ -28,8 +28,15 @@
     ![alt text](fractal-tree.png)
     
     
-4)  Will be updated soon.
+4)  Substitution method  
+    T(n) = 2T(n - 1) + 1 = 2(2T(n - 2) + 1) + 1 =  
+    2<sup>2</sup>T(n - 2) + 2 + 1 = 2<sup>2</sup>(2T(n - 3) + 1) + 2 + 1 =  
+    2<sup>3</sup>T(n - 3) + 2<sup>2</sup> + 2 + 1  
+    We see that with each substitution an exponentiation gets bigger by 1;  
+    Since we've got to find the theta notation, we simply can skip constants,  
+    then θ = (2<sup>n</sup>).  
+    **θ(2^n) > θ(n*m)**, recursive method slower than dynamic.
 
-5)  
+5)  Is being updated
     
    
