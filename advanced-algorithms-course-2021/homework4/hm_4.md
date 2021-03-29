@@ -6,7 +6,7 @@
     computer scientist can use this algorithm instead of manual path  
     computation, in this case it optimizes developer's lifetime and makes  
     his life less depressive. This algorithm computes a most expensive path  
-    from a top to a bottom.
+    from a top to a bottom. Also, this algorithm doesn't use a recursion.
    
 2)  For the top element we don't need to compute a path complexity because  
     the top represents the only a single element. Also, if we pick up a  
@@ -35,8 +35,8 @@
     2<sup>2</sup>T(n - 2) + 2 + 1 = 2<sup>2</sup>(2T(n - 3) + 1) + 2 + 1 =  
     2<sup>3</sup>T(n - 3) + 2<sup>2</sup> + 2 + 1  
     We see that with each substitution an exponentiation gets bigger by 1;  
-    Since we've got to find the theta notation, we simply can skip constants,  
-    then θ = (2<sup>n</sup>).  
+    Since we've got to find the theta notation, we simply can skip constants, then θ = (2<sup>n</sup>).  
+    
     **θ(2^n) > θ(n*m)**, recursive method slower than dynamic.
 
 5)  Is being updated
