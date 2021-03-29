@@ -6,7 +6,9 @@
     computer scientist can use this algorithm instead of manual path  
     computation, in this case it optimizes developer's lifetime and makes  
     his life less depressive. This algorithm computes a most expensive path  
-    from a top to a bottom. Also, this algorithm doesn't use a recursion.
+    from a top to a bottom. Also, this algorithm doesn't use a recursion.  
+    And uses additional tables to keep values which help to determine a most  
+    expensive path.
    
 2)  For the top element we don't need to compute a path complexity because  
     the top represents the only a single element. Also, if we pick up a  
