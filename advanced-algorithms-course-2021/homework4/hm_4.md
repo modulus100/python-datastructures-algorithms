@@ -15,7 +15,9 @@
     complexities for an upper level, because we can go only right or only  
     left. If the point for some reason is located at a corner then we need  
     to compute complexity for only a single point, because you simply can't  
-    go to any more direction, only left or only right.
+    go to any more direction, only left or only right.  
+    We simply can compare (i + 1, j) with (i + 1, j + 1), if the first one is  
+    bigger then path is (i, j), (i + 1, j) otherwise (i, j), (i + 1, j + 1).  
     
 3)  If we replace loops by recursion calls inside the triangle-path-dynamic  
     function then it won't make any performance issues except additional   
