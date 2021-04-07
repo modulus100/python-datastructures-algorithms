@@ -28,11 +28,10 @@ class Graph:
 
 
 def dijkstra(graph, source):
-    result = {}
-    result[source] = 0
+    result = {source: 0}
 
     for node in graph.nodes:
-        if (node != source):
+        if node != source:
             result[node] = sys.maxsize
 
     unvisited = set(graph.nodes)
@@ -66,7 +65,7 @@ def dijkstra(graph, source):
                 distance = current_distance + graph.distances[(min_node, neighbour)]
 
                 # 3. If the calculated distance of the unvisited neighbour is less than the already known distance in result dictionary, update the shortest distance in the result dictionary.
-                if ((neighbour not in result) or (distance < result[neighbour])):
+                if (neighbour not in result) or (distance < result[neighbour]):
                     result[neighbour] = distance
 
                     # 4. If there is an update in the result dictionary, you need to update the path dictionary as well for the same key.
