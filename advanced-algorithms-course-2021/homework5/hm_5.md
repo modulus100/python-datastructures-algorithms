@@ -18,4 +18,11 @@ The difference range must be in 0 <= k_A',D - k_A,D <= 2.
 
 ### Q3
 
+| Operation      | Actual cost c<sub>i</sub> | Amortized cost c<sub>i</sub>
+| -------------- | ------------------------- | ------------ 
+| Compute-Route(A, D)      | 1 + (k_A,D  v)       | 1
+| Insert(A, i, a)   | 1        | 2v + 1
+
+
+\sum\limits_{i=1}^{\infty}
 
