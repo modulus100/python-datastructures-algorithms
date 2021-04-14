@@ -39,7 +39,7 @@ algorithm itself **v** won't be change.
 
 
 Cost for each operation, c<sub>i</sub>' = c<sub>i</sub> + Φ(D<sub>i</sub>) - Φ(D<sub>i - 1</sub>) =  
-c<sub>i</sub> + k<sub>i</sub>v - k<sub>i-1</sub>v.
+c<sub>i</sub> + k<sub>i</sub>v - k<sub>i-1</sub>v = 1 + .
 
 
 ### Question 5
