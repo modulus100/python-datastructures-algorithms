@@ -33,4 +33,5 @@ Some existing algorithms can do it in n time.
 ### Question 5
 Maybe there is a catch, but it looks like f position in T looks predictable because  
 vertexes a, b, c, d, e got no children. In this case f is going to be added lastly.  
-No matter how in what order a, b, c, d, e will be called.
+No matter in what order a, b, c, d, e will be called, since there is the only one  
+child which is f.
