@@ -25,8 +25,12 @@ get to the vertex v and will add it to the queue T, since initially vertex v
 is not visited but there is a connection from v to t.  
 
 ### Question 4
-Θ(V) = V<sup>2</sup>, from practical experience I understand that a random pop  
+Θ(V) = |V|<sup>2</sup>, from practical experience I guess that a random pop  
 operation might be complex enough in order to implement random vertex removal.  
-Or elements in the S must be shuffled first in order to get a random vertex.
+Or elements in the S must be shuffled first in order to get a random vertex.  
+Some existing algorithms can do it in n time.
 
 ### Question 5
+Maybe there is a catch, but it looks like f position in T looks predictable because  
+vertexes a, b, c, d, e got no children. In this case f is going to be added lastly.  
+No matter how in what order a, b, c, d, e will be called.
